@@ -15,4 +15,14 @@ o: ascii moving art
 o: answer
 <when 9 is over>
 o: final wisely phrase
+-----
+class Main
+class GematriaCalc
+class AnswerGenerator
+class Randomizer
+-----
+HOW TO
+output char by char whis cursor
+output with randomly generated time
+input from file
 
