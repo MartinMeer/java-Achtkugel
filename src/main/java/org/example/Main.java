@@ -15,14 +15,19 @@ public class Main {
         System.out.println("\nПриветствую тебя, незнакомец!" +
                         "\nОткрой мне твое имя, а я - отвечу на твои вопросы.");
         Scanner sc = new Scanner(System.in);
-        String name = sc.nextLine();
-        System.out.println("\nЯ - Предиктор, и я смогу дать ответ:" +
-                        "\n\n- о всём, что творится под Солнцем: бывает ли, и будет ли..;" +
-                        "\n- и о тебе самом: можешь ли ты, и станешь ли ты..;" +
-                        "\n- и о другом - хочет ли он, боится ли он.." +
+        User user = new User(sc.nextLine());
+        //String userName = user.setUserName(sc.nextLine());
+        System.out.println("Пиши вопрос в окошке этом," +
+                        "\nИ тотчас дам тебе ответы" +
+                        "\nО всём что было, есть и будет," +
+                        "\nТревожит сердце, мысль волнует." +
+                        "\n\nПодумай трижды, не спеши," +
+                        "\nК вопросу ключик приложи." +
+                        "\nНажми на Enter и внимай" +
+                        "\nОтвет - серьёзно принимай." +
                         "\n\nНа все ты вопросы узнаешь ответ - " +
                         "\nКак только проверю - есть ключ или нет." +
-                        "\n\nИтак, " + name + ", количество твоих вопросов на сегодня - " + questCount + "!\nПиши свой первый вопрос.");
+                        "\n\nИтак, " + user.getUserName() + ", количество твоих вопросов на сегодня - " + questCount + "!\n\nПиши свой первый вопрос.");
         String question = sc.nextLine();
         boolean questCheck = StringUtils.containsIgnoreCase(question, " ли ");
 
@@ -32,8 +37,8 @@ public class Main {
             System.out.println("Мой ответ: " + answer);
             counter++;
         }else{
-            System.out.println("\nКлюча к возможности ответа, " +
-                    "\nчастицы \"ли\"  - в вопросе нету!");
+            System.out.println("\nКлюча к возможности ответа - " +
+                    "\nчастицы \"ли\" - в вопросе нету!");
         }
 
         while (counter < questCount) {
