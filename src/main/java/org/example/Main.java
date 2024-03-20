@@ -12,7 +12,8 @@ public class Main {
         int questCount = rnd.getRandomNum();
         int answerIndex;
         int counter = 1;
-        System.out.println("\nПриветствую тебя, незнакомец!" +
+        System.out.println("\nПриветствую тебя, незнакомец!\n" +
+                        "Я - Предсказатель, и умею заглядывать за границы настоящего.\n" +
                         "\nОткрой мне твое имя, а я - отвечу на твои вопросы.\n");
         Scanner sc = new Scanner(System.in);
         User user = new User();
@@ -27,7 +28,7 @@ public class Main {
                         "\nТревожит сердце, мысль волнует." +
                         "\n\nПодумай трижды, не спеши," +
                         "\nК вопросу ключик приложи." +
-                        "\nНажми на Enter и внимай" +
+                        "\nНажми на Enter и внимай." +
                         "\nОтвет - серьёзно принимай." +
                         "\n\nНа все ты вопросы узнаешь ответ - " +
                         "\nКак только проверю - есть ключ или нет." +
@@ -67,7 +68,7 @@ public class Main {
         System.out.println("\n\nСкажи \"Спасибо!\" на прощанье" +
                            "\nИ будет тёплым расставанье..\n\n");
         while (true) {
-        if (sc.nextLine().equals(exit)) {
+        if (sc.nextLine().contains("пасибо")) {
             System.out.println("Всегда рад! До встречи!");
             System.exit(0);
             }
