@@ -6,21 +6,22 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        String quit = "quit";
+        String exit = "Спасибо!";
         Randomizer rnd = new Randomizer();
         Answers answers = new Answers();
         int questCount = rnd.getRandomNum();
-        int answerIndex = rnd.getAnswerIndex();
+        int answerIndex;
         int counter = 1;
         System.out.println("\nПриветствую тебя, незнакомец!" +
-                        "\nОткрой мне твое имя, а я - отвечу на твои вопросы.");
-        User user = new User();
+                        "\nОткрой мне твое имя, а я - отвечу на твои вопросы.\n");
         Scanner sc = new Scanner(System.in);
+        User user = new User();
         //user.setUserName(sc.nextLine());
         while (user.getUserName() == null) {
             user.setUserName(sc.nextLine());
         }
-        System.out.println("Пиши вопрос в окошке этом," +
+        System.out.println("\n\n----- * * * -----" +
+                        "\n\nПиши вопрос в окошке этом," +
                         "\nИ тотчас дам тебе ответы" +
                         "\nО всём что было, есть и будет," +
                         "\nТревожит сердце, мысль волнует." +
@@ -60,7 +61,16 @@ public class Main {
                     counter++;
                 }
         }
-        System.out.println("\n\n------------------\n\nТы спросил - я дал ответ\nЧто-то - будет, что-то - нет..");
-
+        System.out.println("\n\n------ * * * ------" +
+                "\n\nНу что ж, " + user.getUserName() + " пора нам прощаться." +
+                "\n\nНа вопросы дал ответы.\nЧто-то - будет, что-то - нет..");
+        System.out.println("\n\nСкажи \"Спасибо!\" на прощанье" +
+                           "\nИ будет тёплым расставанье..\n\n");
+        while (true) {
+        if (sc.nextLine().equals(exit)) {
+            System.out.println("Всегда рад! До встречи!");
+            System.exit(0);
+            }
+        }
     }
 }
