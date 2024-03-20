@@ -3,7 +3,6 @@ package org.example;
 
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.Objects;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
@@ -17,8 +16,8 @@ public class Main {
                         "\nОткрой мне твое имя, а я - отвечу на твои вопросы.");
         User user = new User();
         Scanner sc = new Scanner(System.in);
-        user.setUserName(sc.nextLine());
-        while ((user.getUserName() == null) | Objects.equals(user.getUserName(), "")) {
+        //user.setUserName(sc.nextLine());
+        while (user.getUserName() == null) {
             user.setUserName(sc.nextLine());
         }
         System.out.println("Пиши вопрос в окошке этом," +
